@@ -1,0 +1,28 @@
+* {
+    padding: 0;
+    margin: 0;
+  }
+  
+  /* header start */
+  .navbar-brand img {
+    margin-right: 10px;
+    width: 50px;
+    height: 50px;
+  }
+  
+  .navbar {
+    padding: 0.6% 9%;
+  }
+  
+  .navbar-toggler {
+    border: none;
+  }
+  
+  .nav-item {
+    padding: 0 10px;
+  }
+  
+  .navbar-expand-lg.bg-body-tertiary {
+    background-color: #ffe15b !important;
+  }
+  /* header end */
