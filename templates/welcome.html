@@ -1,0 +1,40 @@
+{% extends "layout.html"%}
+
+{% block title %} 
+    GiveRadar
+{% endblock %}
+
+{% block head %} 
+    <section class="welcome">
+        <div class="welcome-container">
+            <div class="content">
+                <h1>Track your inpact, inspire change!</h1>
+                <p>GiveRadar is a nonprofit organization that spreads awareness about the environment, provides resources and encourages people to recycle and volunteer, ultimately making the world a better place</p>
+                <a href="/register">Join now!</a>
+            </div>
+        </div>
+        <div class="shadow"></div>
+    </section>
+{% endblock %}
+
+
+{% block main %}
+    <section class="statistics" id="statistics">
+        <div class="container">
+            <div class="statistics-content">
+                <div class="cnt" data-number="105">
+                    <span>0</span>
+                    <h3>Cities</h3>
+                </div>
+                <div class="cnt" data-number="356">
+                    <span>0</span>
+                    <h3>Projects</h3>
+                </div>
+                <div class="cnt" data-number="1346">
+                    <span>0</span>
+                    <h3>Volunteers</h3>
+                </div>
+            </div>
+        </div>
+    </section>
+{% endblock%}
