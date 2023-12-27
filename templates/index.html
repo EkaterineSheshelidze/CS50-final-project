@@ -5,5 +5,58 @@
 {% endblock %}
 
 {% block main %}
-    <h1>HELLO;dklf</h1>
+    <section class="home">
+        <div class="account">
+            <div class="profile">
+                <div class="profile-pic">
+                    <img src="{{ url_for('static', filename='uploads/' + user.pic) }}" alt="profile-pic">
+                </div>
+                <h1 class="username">{{ user.username }}</h1>
+                <div class="profile-info">
+                    <div class="hours">
+                        <h2>Hours</h2>
+                        <h3>{{ user.hours }}</h3>
+                    </div>
+                    <div class="Points">
+                        <h2>Points</h2>
+                        <h3>{{ user.points }}</h3>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="content">
+            <div class="user-progress">
+                <div class="progress-title">
+                    <h2>Progress</h2>
+                    <a href="/add">Add Progress</a>
+                </div>
+                <div class="progress-container">
+                    {% for p in progress %}
+                        <div class="progress-item">
+                            <div class="progress-item-image">
+                                <img src="{{ url_for('static', filename='images/' + p.type + '.png') }}" alt="">
+                            </div>
+                            <div class="progress-item-content">
+                                <div class="progress-item-text">
+                                    <h4>{{ p.orgName }}</h4>
+                                    <p  id="org-type">{{ p.type }}</p>
+                                    <p>{{ p.date }}</p>
+                                </div>
+                                <div class="numbers">
+                                    <div class="hours">
+                                        <p>Hours</p>
+                                        <h4>{{ p.hours }}</h4>
+                                    </div>
+                                    <div class="points">
+                                        <p>Points</p>
+                                        <h4>{{ p.points }}</h4>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    {% endfor %}
+                </div>
+            </div>
+        </div>
+    </section>
 {% endblock%}

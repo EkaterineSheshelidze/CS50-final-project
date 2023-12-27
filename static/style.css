@@ -1,3 +1,7 @@
+:root {
+  --green: #55A630;
+}
+
 * {
   padding: 0;
   margin: 0;
@@ -33,7 +37,11 @@
 }
 
 #register {
-  color: #55A630;
+  color: var(--green);
+}
+
+#logout a{
+  color: var(--green);
 }
   
 .navbar-expand-lg.bg-body-tertiary {
@@ -58,7 +66,7 @@ footer .footer-content{
 }
 
 footer p span{
-  color: #55A630;
+  color: var(--green);
 }
 
 footer p{
@@ -130,7 +138,7 @@ footer .socials img{
   text-decoration: none;
   display: inline-block;
   color: white;
-  background-color: #55A630;
+  background-color: var(--green);
   padding: 12px 36px;
   border-radius: 8px;
   margin-top: 35px;
@@ -162,9 +170,444 @@ footer .socials img{
   font-size: 65px;
 }
 
-
 /* welcome main end  */
 
+/* form start */
+.form{
+  height: calc(100vh - 70px);
+}
+
+.form .form-content{
+  width: 40%;
+  margin: auto;
+  padding: 40px 50px;
+  -webkit-box-shadow: 0px 0px 24px -2px rgba(0,0,0,0.32);
+-moz-box-shadow: 0px 0px 24px -2px rgba(0,0,0,0.32);
+box-shadow: 0px 0px 24px -2px rgba(0,0,0,0.32);
+  margin-top: 70px;
+  border-radius: 10px;
+}
+
+.form .form-content h2{
+  margin-bottom: 35px;
+  text-transform: uppercase;
+}
+
+.form .form-floating{
+  margin-bottom: 20px;
+}
+
+.form .form-btn{
+  background-color: var(--green);
+  border: none;
+  padding: 12px 38px;
+  border-radius: 6px;
+  color: white;
+  margin-top: 15px;
+}
+
+.form .date-container{
+  display: flex;
+  align-items: center;
+  margin-top: 25px;
+}
+
+.form .date-container .date-label{
+  margin-right: 15px;
+  font-weight: bold;
+}
+
+.form .form-label{
+  font-weight: bold;
+  margin-bottom: 10px;
+}
+
+.form.add{
+  height: 100%;
+}
+
+.form.add .form-content{
+  margin-bottom: 100px;
+}
+
+.form.add .form-content h2{
+  text-transform: none;
+}
+
+.form.add .form-btn{
+  margin-top: 25px;
+}
+
+.mb-3 {
+  margin-bottom: 20px !important;
+}
+
+.error-message{
+  color: red;
+  margin-top: 5px;
+}
+/* form end */
+
+/* home start */
+.home{
+  margin: 65px 5%;
+  display: flex;
+  height: calc(100vh - 70px);
+}
+
+.account{
+  width: 30%;
+  padding-right: 4%;
+}
+
+.account .profile-pic{
+  position: relative;
+  display: inline-block;
+}
+.account .profile-pic img{
+  width: 140px;
+  height: 140px;
+  border-radius: 50%;
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+}
+
+.account .profile{
+  text-align: center;
+  -webkit-box-shadow: 0px 0px 24px -2px rgba(0,0,0,0.32);
+-moz-box-shadow: 0px 0px 24px -2px rgba(0,0,0,0.32);
+box-shadow: 0px 0px 24px -2px rgba(0,0,0,0.32);
+  padding: 40px 0;
+  margin: 0 10px;
+  border-radius: 7px;
+}
+
+.account .user-actions{
+  margin: 20px 10px;
+  -webkit-box-shadow: 0px 0px 24px -2px rgba(0,0,0,0.32);
+  -moz-box-shadow: 0px 0px 24px -2px rgba(0,0,0,0.32);
+  box-shadow: 0px 0px 24px -2px rgba(0,0,0,0.32);
+  border-radius: 7px;
+}
+
+.account .user-actions a {
+  text-decoration: none;
+  width: 100%;
+  display: block;
+  color: black;
+  padding: 15px 35px;
+  font-size: 20px;
+}
+
+.account .user-actions a:first-child{
+  border-bottom: 2px solid rgb(209 209 209);
+}
+
+.account .profile .username {
+  font-size: 25px;
+  margin-top: 12px;
+}
+
+.account .profile-info{
+  display: flex;
+  justify-content: space-evenly;
+  margin-top: 40px;
+}
+
+.account .profile-info h2 {
+  font-size: 23px;
+  border-bottom: 2px solid var(--green);
+  padding: 8px 10px;
+  margin-bottom: 12px;
+}
+
+.account #logout{
+  height: 21px;
+  margin-left: 10px;
+  margin-bottom: 3px;
+}
+
+.content{
+  width: 70%;
+}
+
+.content .progress-title{
+  margin-bottom: 25px;
+  display: flex;
+  align-items: center;
+}
+
+.content .progress-title a{
+  text-decoration: none;
+  margin-left: 20px;
+  color: var(--green);
+}
+
+.content .progress-item{
+  display: flex;
+  -webkit-box-shadow: 0px 0px 12px -1px rgba(0,0,0,0.24);
+-moz-box-shadow: 0px 0px 12px -1px rgba(0,0,0,0.24);
+box-shadow: 0px 0px 12px -1px rgba(0,0,0,0.24);
+  padding: 15px 20px;
+  border-radius: 5px;
+  align-items: center;
+  margin-bottom: 15px;
+}
+
+.content .progress-item-content{
+  display: flex;
+  width: 100%;
+  justify-content: space-between;
+  margin: 0 25px;
+}
+
+.content .progress-item-content p{
+  margin-bottom: 0;
+  margin-top: 5px;
+}
+
+.content .progress-item-content #org-type::first-letter{
+  text-transform: uppercase;
+}
+
+.content .progress-item-image{
+  display: flex;
+  align-items: center;
+}
+
+.content .progress-item-image img{
+  height: 70px;
+  width: 70px;
+}
+
+.content .numbers{
+  display: flex;
+}
+
+.content .numbers div{
+  width: 100px;
+  text-align: center;
+  padding: 12px;
+}
+
+.content .numbers div h4{
+  font-size: 25px;
+}
+
+.content .numbers div p{
+  font-weight: bold;
+}
+
+.content .numbers .hours{
+  background-color: #fff085;
+  margin-right: 15px;
+}
+
+.content .numbers .points{
+  background-color: #c0deb3;
+}
+/* home end */
+
+/* Profile start */
+.profile-page{
+  height: calc(100vh - 140px);
+}
+
+.profile-page .profile-content{
+  margin: 65px 10%;
+}
+
+.profile-page .profile-content .change-profile-pic{
+  margin-bottom: 55px
+}
+
+.profile-page .profile-content h2{
+  margin-bottom: 40px;
+}
+
+.profile-page .profile-content .input-group {
+  width: 40%;
+}
+
+.profile-page .profile-content .input-group #upload{
+  background-color: var(--green);
+  color: white;
+  padding: 0 12px;
+  border: none;
+  border-top-right-radius: 5px;
+  border-bottom-right-radius: 5px;
+}
+
+.profile-page .profile-content h4{
+  font-size: 20px;
+  margin-bottom: 17px;
+}
+
+.profile-page .change-password a{
+  display: inline-block;
+  text-decoration: none;
+  color: black;
+  background-color: #ebebeb;
+  font-size: 17px;
+  border-radius: 6px;
+  padding: 10px 20px;
+}
+
+.profile-page .change-password img{
+  height: 16px;
+  margin-left: 10px;
+  margin-bottom: 3px;
+
+}
+
+/* Profile end */
+
+/* discover start */
+
+.discover{
+  margin: 65px 7%;
+}
+
+.discover h2{
+  border-bottom: 2px solid var(--green);
+  display: inline-block;
+  padding: 8px;
+}
+
+.discover .news-container {
+  width: 70%;
+  margin-top: 35px
+}
+
+.discover .news-container .news-item a{
+  text-decoration: none;
+  display: flex;
+  color: black;
+}
+
+.discover .news-item {
+  padding: 20px 22px;
+  margin-bottom: 25px;
+  border-radius: 7px;
+  -webkit-box-shadow: 0px 0px 12px -1px rgba(0,0,0,0.24);
+-moz-box-shadow: 0px 0px 12px -1px rgba(0,0,0,0.24);
+box-shadow: 0px 0px 12px -1px rgba(0,0,0,0.24);
+}
+
+.discover .news-item .news-item-image {
+  width: 30%;
+  height: 235px;
+}
+
+.discover .news-item .news-item-image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.discover .news-item .news-item-content {
+  margin-left: 25px;
+}
+
+.discover .news-item .news-item-content img{
+  width: 63px;
+  height: 63px;
+  border-radius: 50%;
+  object-fit: cover;
+  background-position: center;
+  background-size: cover;
+  margin-right: 17px;
+}
+
+.discover .news-item .news-item-content p {
+  font-size: 15px;
+  margin-bottom: 0;
+}
+
+.discover .news-item .news-item-content .organization{
+  display: flex;
+  align-items: center;
+  margin-bottom: 17px;
+}
+
+.discover .news-item .news-item-content h4{
+  margin-bottom: 2px;
+}
+
+.discover .news-item .news-item-content .Recycling{
+  color: var(--green);
+  font-weight: bold;
+}
+
+.discover .news-item .news-item-content .Volunteering{
+  color: #f76c82;
+  font-weight: bold;
+}
+
+.discover .news-item .news-item-content .text{
+  font-size: 17px;
+  margin-bottom: 10px;
+}
+
+.discover .news-item.small a{
+  display: block;
+}
+
+.discover .news-item.small .news-item-content {
+  padding: 20px 25px;
+  margin-top: 5px;
+  margin-left: 0;
+}
+
+/* discover end */
+
+/* map start */
+.map-page{
+  margin: 70px 5% 0 5%;
+  height: calc(100vh - 100px);
+  display: flex;
+}
+
+#map {
+  flex: 1;
+  height: 85%;
+  z-index: 0;
+  background-color: grey;
+}
+
+.map-content{
+  margin-right: 90px;
+}
+
+.map-content #slogan{
+  color: var(--green);
+  font-weight: bold;
+}
+
+.map-content .marker-desc{
+  margin-top: 30px;
+}
+
+.map-content p{
+  margin-bottom: 10px;
+  display: flex;
+  align-items: center;
+  font-weight: bold;
+}
+
+.map-content img{
+  height: 30px;
+  width: 30px;
+  margin-right: 10px;
+}
+
+/* map end */
+@media (max-width: 1300px){
+  .discover .news-container {
+    width: 100%;
+  }
+}
 
 @media (max-width: 1000px){
   footer{
@@ -184,6 +627,16 @@ footer .socials img{
   .welcome .content{
     width: 65%;
     margin: auto;
+    margin-top: 40px;
+    margin-bottom: 40px;
+  }
+
+  .image {
+    height: 100%;
+  }
+
+  .welcome .welcome-container {
+    height: 100%;
   }
 
   .statistics-content{
@@ -193,5 +646,99 @@ footer .socials img{
   .statistics-content .cnt{
     text-align: center;
     margin-bottom: 20px;
+  }
+
+  .form .form-content{
+    width: 80%;
+    
+  }
+
+  .form{
+    margin-bottom: 70px;
+  }
+
+  .home{
+    margin: 65px 5%;
+    display: block;
+    height: 100%;
+  }
+
+  .account{
+    width: 100%;
+    padding-right: 0;
+  }
+
+  .content{
+    width: 100%;
+  }
+
+  .account .profile{
+    margin: 0;
+    margin-bottom: 50px;
+  }
+  
+  .content .progress-item-image img{
+    height: 70px;
+    width: 70px;
+  }
+
+  .content .numbers div{
+    width: 70px;
+    text-align: center;
+    padding: 12px;
+  }
+  
+  .content .numbers div h4{
+    font-size: 20px;
+    margin-bottom: 0;
+  }
+
+  .content .progress-item-content p {
+    font-size: 14px;
+    margin-top: 3px;
+  }
+
+  .content .progress-item-content h4 {
+    font-size: 20px;
+  }
+
+  .profile-page .profile-content .input-group {
+    width: 80%;
+  }  
+
+  .discover .news-item .news-item-image {
+    width: 36%;
+  }
+
+  .map-page{
+    height: 100%;
+    display: block;
+  }
+  
+  #map {
+    height: 500px;
+    margin-bottom: 70px;
+  }
+
+  .map-content{
+    margin-right: 0;
+    margin-bottom: 60px;
+  }
+
+  .map-content h2{
+    font-size: 30px;
+  }
+}
+
+@media (max-width: 800px){
+  .discover .news-item .news-item-image {
+    width: 100%;
+  }
+  .discover h2{
+    font-size: 30px;
+  }
+
+  .discover .news-item {
+    margin-bottom: 30px;
   }
 }

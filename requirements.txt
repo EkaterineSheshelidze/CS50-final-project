@@ -1,1 +1,6 @@
+cs50
 Flask
+Flask-Session
+requests
+pip==23.3.2
+Werkzeug==2.0.2

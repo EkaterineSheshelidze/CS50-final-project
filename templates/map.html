@@ -1,0 +1,23 @@
+{% extends "layout.html" %}
+
+{% block title %}
+    Map
+{% endblock %}
+
+{% block main %}
+    
+    <sectionc class="map-page">
+        <div class="map-content">
+            <h2>GiveRadar Recycling Map</h2>
+            <p id="slogan">Find recycling and donation spots near you!</p>
+            <div class="marker-desc">
+                <p><img src="/static/markers/red.png" alt="red">Clothing Donation Boxes</p>
+                <p><img src="/static/markers/green.png" alt="green">Plastic Recycling Points</p>
+                <p><img src="/static/markers/tree.png" alt="yellow">Paper Recycling Bins</p>
+                <p><img src="/static/markers/yellow.png" alt="yellow">Recycling Bins</p>
+                <p><img src="/static/markers/blue.png" alt="blue">Old Battery drop off points</p>
+            </div>
+        </div>
+        <div id="map"></div>
+    </section>
+{% endblock %}

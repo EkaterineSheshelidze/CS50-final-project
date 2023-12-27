@@ -1,0 +1,32 @@
+{% extends "layout.html" %}
+
+{% block title %}
+    Log in
+{% endblock %}
+
+{% block main %}
+    <section class="form">
+        <div class="form-content">
+            <h2>Log in</h2>
+            <form action="/login" method="post">
+                    <div class="input-group">
+                        <div class="form-floating">
+                          <input autocomplete="off" autofocus type="text" class="form-control" name="username" id="username" placeholder="Username" required>
+                          <label for="username">Username</label>
+                        </div>
+                    </div>
+                    <div class="input-group">
+                        <div class="form-floating">
+                            <input autocomplete="off" autofocus type="password" class="form-control" name="password" id="password" placeholder="Password" required>
+                            <label for="password">Password</label>
+                        </div>
+                    </div>
+
+                    <div class="error-message">
+                        <p>{{ message }}</p>
+                    </div>
+                <button class="form-btn" type="submit">Log In</button>
+            </form>
+        </div>
+    </section>
+{% endblock %}

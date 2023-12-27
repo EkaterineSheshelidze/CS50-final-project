@@ -1,0 +1,46 @@
+{% extends "layout.html" %}
+
+{% block title %}
+    Add progress
+{% endblock %}
+
+{% block main %}
+    <section class="form add">
+        <div class="form-content">
+            <h2>Add Progress</h2>
+            <form action="/add" method="post">
+                <div class="mb-3">
+                    <label for="org_name" class="form-label">Organization Name</label>
+                    <input autocomplete="off" autofocus name="org_name" type="text" class="form-control" id="org_name" placeholder="Helping Hand" required>
+                </div>
+
+                <div class="mb-3">
+                    <label for="type" class="form-label">Select Type</label>
+                    <select name="type" id="type" class="form-select" aria-label="Default select example" required>
+                        <option selected disabled>Select</option>
+                        <option value="volunteering">Volunteering</option>
+                        <option value="recycling">Recycling</option>
+                    </select>
+                </div>
+
+                <div class="mb-3 date-container">
+                    <label class="date-label" for="date">Date</label>
+                    <div class="date">
+                        <input type="date" id="date" name="date" required>
+                    </div>
+                </div>
+
+                <div class="mb-3 form-hours">
+                    <label for="hours" class="form-label">Number of Hours</label>
+                    <input autocomplete="off" autofocus name="hours" type="number" class="form-control" id="hours" placeholder="2" required>
+                </div>
+
+                <div class="error-message">
+                    <p>{{ message }}</p>
+                </div>
+                
+                <button class="form-btn" type="submit">Add</button>
+            </form>
+        </div>
+    </section>
+{% endblock %}

@@ -1,4 +1,4 @@
-from flask import redirect,  session
+from flask import redirect, session, render_template
 from functools import wraps
 
 def login_required(f):
@@ -8,4 +8,9 @@ def login_required(f):
         if session.get("user_id") is None:
             return redirect("/welcome")
         return f(*args, **kwargs)
+    
     return decorated_function
+
+def apology(page, message, code=400):
+    """Render message as an apology to user."""
+    return render_template(page, message=message), code

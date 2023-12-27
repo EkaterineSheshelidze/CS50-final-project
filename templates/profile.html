@@ -1,0 +1,33 @@
+{% extends "layout.html" %}
+
+{% block title %}
+    Profile
+{% endblock %}
+
+{% block main %}
+    <section class="profile-page">
+        <div class="profile-content">
+            <h2>Edit Profile</h2>
+            <div class="change-profile-pic">
+                <h4>Change Profile Picture</h4>
+                <form action="/upload" method="post" enctype="multipart/form-data">
+                    <div class="input-group mb-3">
+                        <input type="file" name="profile_pic" class="form-control" id="inputGroupFile02">
+                        <button id="upload" type="submit">Upload</button>
+                    </div>
+                    <div class="error-message">
+                        <p>{{ message }}</p>
+                    </div>
+                  </form>
+            </div>
+    
+            <div class="change-password">
+                <h4>Change Password</h4>
+                <a href="/password">
+                    Change Password
+                    <img src="/static/images/pencil.png" alt="">
+                </a>
+            </div>
+        </div>
+    </section>
+{% endblock %}
