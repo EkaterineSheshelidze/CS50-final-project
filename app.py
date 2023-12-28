@@ -1,7 +1,7 @@
 import os
 
 from cs50 import SQL
-from flask import Flask, flash, redirect, render_template, request, session, url_for
+from flask import Flask, redirect, render_template, request, session
 from flask_session import Session
 from werkzeug.security import check_password_hash, generate_password_hash
 
@@ -18,6 +18,7 @@ Session(app)
 # Configure CS50 Library to use SQLite database
 db = SQL("sqlite:///giveradar.db")
 
+
 @app.after_request
 def after_request(response):
     """Ensure responses aren't cached"""
@@ -26,16 +27,23 @@ def after_request(response):
     response.headers["Pragma"] = "no-cache"
     return response
 
+
 @app.route("/welcome")
 def welcome():
+    """Welcome page"""
+
+    session.clear()
     if session.get("user_id") is None:
         return render_template("welcome.html", welcome=True)
     else:
         return redirect("/")
 
+
 @app.route("/")
 @login_required
 def index():
+    """Display user info and progress on home page"""
+
     user = db.execute(
         "SELECT * FROM users WHERE id = ?", session["user_id"]
     )
@@ -45,9 +53,12 @@ def index():
     )
     return render_template("index.html", user=user[0], progress=progress)
 
+
 @app.route("/add", methods=["GET", "POST"])
 @login_required
 def add():
+    """Add new progress"""
+
     if request.method == "POST":
         # Get user input
         orgName = request.form.get("org_name")
@@ -55,6 +66,7 @@ def add():
         progressDate = request.form.get("date")
         hours = request.form.get("hours")
 
+        # Ensure everything was submitted corrrectly
         if not orgName or not progressType or not progressDate or not hours:
             return apology("add.html", "Fill out all fields")
         elif not hours.isnumeric() or float(hours) <= 0:
@@ -63,6 +75,7 @@ def add():
         hours = float(hours)
         points = hours * 20
 
+        # Insert to progress
         db.execute(
                 "INSERT INTO progress (person_id, orgName, type, date, hours, points) VALUES(?, ?, ?, ?, ?, ?)",
                 session["user_id"],
@@ -78,6 +91,7 @@ def add():
         newHours = float(userHours[0]["hours"]) + hours
         newPoints = float(userPoints[0]["points"]) + points
 
+        # Update user hours and points
         db.execute(
             "UPDATE users SET hours = ?, points = ? WHERE id = ?", 
             newHours,
@@ -88,6 +102,7 @@ def add():
         return redirect("/")
     else:
         return render_template("add.html")
+
 
 @app.route("/login", methods=["GET", "POST"])
 def login():
@@ -137,8 +152,10 @@ def logout():
     # Redirect user to login form
     return redirect("/")
 
+
 @app.route("/register", methods=["GET", "POST"])
 def register():
+    """Register user"""
 
     if request.method == "POST":
         # Get username and password
@@ -162,21 +179,24 @@ def register():
             generate_password_hash(password),
         )
 
-        # flash("Registered!")
-
         return redirect("/")
 
     else:
         return render_template("register.html")
     
+
 @app.route("/profile", methods=["GET", "POST"])
 @login_required
 def profile():
+    """Open profile page"""
     return render_template("profile.html")
+
 
 @app.route("/password", methods=["GET", "POST"])
 @login_required
 def password():
+    """Change password"""
+
     if request.method == "POST":
         # Get user input
         old_password = request.form.get("old_password")
@@ -208,12 +228,16 @@ def password():
     else:
         return render_template("password.html")
     
+    
 @app.route("/upload", methods=["POST"])
 @login_required
 def upload_profile_pic():
+    """Change profile picture"""
+
     # Get the uploaded file
     profile_pic = request.files["profile_pic"]
 
+    # Ensure profile_pic was submitted
     if not profile_pic:
         return apology("profile.html", "Upload profile picture")
 
@@ -230,14 +254,18 @@ def upload_profile_pic():
 @app.route("/discover")
 @login_required
 def discover():
+    """Display news on discover page"""
 
+    # Get news form discover
     news = db.execute(
         "SELECT * FROM discover"
     )
 
     return render_template("discover.html", news=news)
 
+
 @app.route("/map")
 @login_required
 def map():
+    """Open map page"""
     return render_template("map.html")

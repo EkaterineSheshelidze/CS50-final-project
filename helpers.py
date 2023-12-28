@@ -12,5 +12,5 @@ def login_required(f):
     return decorated_function
 
 def apology(page, message, code=400):
-    """Render message as an apology to user."""
+    """ Render message to user. """
     return render_template(page, message=message), code

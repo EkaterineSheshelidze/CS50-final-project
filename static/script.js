@@ -1,4 +1,7 @@
-// statistics
+// Statistics
+
+const statisticsDiv = document.getElementById("statistics");
+
 function createStatistics(obj){
     const max = obj.getAttribute("data-number");
     const spanEl = obj.querySelector("span");
@@ -24,8 +27,6 @@ function startCount(){
     }
 }
 
-
-const statisticsDiv = document.getElementById("statistics");
 if (statisticsDiv){
     let v = false;
     document.addEventListener("scroll", function(){
@@ -41,7 +42,8 @@ if (statisticsDiv){
     });
 }
 
-// Home 
+
+// Home page
 
 function createActions(){
     const element = document.querySelector('.user-actions');
@@ -62,6 +64,8 @@ function createNav(){
     const nav = document.querySelector('.navbar-nav');
 
     if(!document.querySelector('#logout') && !document.querySelector('#change-password')) {
+
+        // Create the elements
         const newElement1 = document.createElement('li'); 
         newElement1.innerHTML = '<a class="nav-link" href="/logout">Log out</a>';
         newElement1.classList.add('nav-item');
@@ -72,7 +76,7 @@ function createNav(){
         newElement2.classList.add('nav-item');
         newElement2.id = "profile";
 
-        // Insert the elemenst into the nav
+        // Insert the elements into the nav
         nav.appendChild(newElement2);
         nav.appendChild(newElement1);
     }
@@ -102,18 +106,6 @@ window.addEventListener('resize', function() {
     } else {
         removeNav();
     }
-
-    if (window.innerWidth > 800 && document.querySelector(".news-item")){
-        const news = document.querySelectorAll(".news-item");
-        news.forEach((item)=>{
-            item.classList.remove("small");
-        })
-    } else if (window.innerWidth <= 800 && document.querySelector(".news-item")){
-        const news = document.querySelectorAll(".news-item");
-        news.forEach((item)=>{
-            item.classList.add("small");
-        })
-    }
   });
   
 // Initial check on page load
@@ -127,6 +119,24 @@ if (window.innerWidth >= 1000 && document.querySelector('.account')) {
     removeNav();
 }
 
+
+// Discover page
+
+window.addEventListener('resize', function() {
+    if (window.innerWidth > 800 && document.querySelector(".news-item")){
+        const news = document.querySelectorAll(".news-item");
+        news.forEach((item)=>{
+            item.classList.remove("small");
+        })
+    } else if (window.innerWidth <= 800 && document.querySelector(".news-item")){
+        const news = document.querySelectorAll(".news-item");
+        news.forEach((item)=>{
+            item.classList.add("small");
+        })
+    }
+  });
+
+// Initial check on page load
 if (window.innerWidth > 800 && document.querySelector(".news-item")){
     const news = document.querySelectorAll(".news-item");
     news.forEach((item)=>{
@@ -139,9 +149,11 @@ if (window.innerWidth > 800 && document.querySelector(".news-item")){
     })
 }
 
+
 // Map
 
 function getPosition() {
+    // Get user's geolocation
     navigator.geolocation.getCurrentPosition(
       loadMap.bind(this),
 
@@ -152,10 +164,12 @@ function getPosition() {
 }
 
 function loadMap(position) {
+    // Get user's coordinates
     const { latitude } = position.coords;
     const { longitude } = position.coords;
     const coords = [latitude, longitude];
 
+    // Display a map
     let map = L.map('map').setView(coords, 13); 
 
     L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
@@ -163,6 +177,7 @@ function loadMap(position) {
         '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
     }).addTo(map);
 
+    // Display markers from map.csv
     fetch("static/map.csv")
     .then(response => response.text())
     .then(csvData => {
