@@ -256,16 +256,16 @@ def upload_profile_pic():
 def discover():
     """Display news on discover page"""
 
-    # Get news form discover
-    news = db.execute(
-        "SELECT * FROM discover"
-    )
+    # # Get news form discover
+    # news = db.execute(
+    #     "SELECT * FROM discover"
+    # )
 
-    return render_template("discover.html", news=news)
+    return render_template("discover.html")
 
 
 @app.route("/map")
-@login_required
+@login_required 
 def map():
     """Open map page"""
     return render_template("map.html")

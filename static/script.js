@@ -4,7 +4,7 @@ const statisticsDiv = document.getElementById("statistics");
 
 function createStatistics(obj){
     const max = obj.getAttribute("data-number");
-    const spanEl = obj.querySelector("span");
+    const spanEl = obj.querySelector("span"); 
     let k = 0;
     
     let interval = setInterval(function(){
@@ -178,13 +178,12 @@ function loadMap(position) {
     }).addTo(map);
 
     // Display markers from map.csv
-    fetch("static/map.csv")
+    fetch("static/databases/map.csv")
     .then(response => response.text())
     .then(csvData => {
         const parsedData = Papa.parse(csvData, { header: true, dynamicTyping: true });
 
         parsedData.data.slice(1).forEach(row => {
-            console.log(row)
             var myIcon = L.icon({
                 iconUrl: 'static/markers/' + row.logo,
                 iconSize: [38, 38],
@@ -209,4 +208,38 @@ function loadMap(position) {
 
 if (document.querySelector(".map-page")){
     getPosition();
+}
+
+if(document.querySelector(".news-container")){
+    fetch("static/databases/discover.csv")
+    .then(response => response.text())
+    .then(csvData => {
+        const parsedData = Papa.parse(csvData, { header: true, dynamicTyping: true });
+        parsedData.data.slice(0).forEach(row => {
+            console.log(row);
+            const container = document.querySelector(".news-container")
+            const newsItem = document.createElement("div");
+            newsItem.classList.add("news-item")
+            newsItem.innerHTML = `
+                    <a href="${row.url}">
+                        <div class="news-item-image">
+                            <img src="${row.img}" alt="image">
+                        </div>
+                        <div class="news-item-content">
+                            <div class="organization">
+                                <img src="${'static/news/' + row.logo}" alt="logo">
+                                <div class="title">
+                                    <h4>${row.orgName}</h4>
+                                    <p class="${row.type}">${row.type}</p>
+                                </div>
+                            </div>
+                            <p class="text">${row.desc}</p>  
+                            <p>📍 ${row.place}</p>
+                            <p>📅 ${row.date}</p>
+                            <p>🕒 ${row.time} </p>
+                        </div>
+                    </a>`
+            container.appendChild(newsItem);
+        });
+    });
 }

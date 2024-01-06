@@ -84,34 +84,9 @@ For GiveRadar website to work, users, progress and discover Tables need to be cr
         hours NUMERIC NOT NULL,
         points NUMERIC NOT NULL, person_id INT NOT,
      );
-
-     -- Discover Table 
-     CREATE TABLE IF NOT EXISTS "discover"(
-        "orgName" TEXT NOT NULL,
-        "type" TEXT NOT NULL,
-        "desc" TEXT NOT NULL,
-        "place" TEXT NOT NULL,
-        "date" TEXT NOT NULL,
-        "time" TEXT NOT NULL,
-        "img" TEXT NOT NULL,
-        "logo" TEXT NOT NULL,
-        "url" TEXT NOT NULL,
-     );
      ```
-
-3. **Populate Initial Data:**
-   - Insert sample data into the Discover Table (this is a temporary solution that will be change later in the development).
-
-     ```sql
-     -- Insert sample in discover
-     INSERT INTO discover ("orgName", "type", "desc", "place", "date", "time", "img", "logo", "url")
-     VALUES
-        ('Tene Recycing Program', 'Recycling', 'Exchange an old charger or 50 bottle caps for a new Tene USB charger!', 'Tbilisi, Sokhumi Street N4', 'December 27, 2023', '16:00 - 18:00', 'https://scontent.ftbs6-2.fna.fbcdn.net/v/t39.30808-6/371109149_700588932095644_8244222026322386875_n.jpg?stp=dst-jpg_p843x403&_nc_cat=106&ccb=1-7&_nc_sid=3635dc&_nc_ohc=j6VZMRsKs-AAX_FmAyI&_nc_ht=scontent.ftbs6-2.fna&oh=00_AfAX1Rxjff9EDmwG9rs3azmzRCSrrr9-tKTo34CUIFHspw&oe=658FCE7E', 'tene.jpg', 'https://www.facebook.com/TeneUSB/posts/pfbid02jFWqWXr5bdZPmHV5G2Rk3ydJAJmadbvCDxQnGzJ5HmFCSR6dLTuFziQbcBsQSg3dl'),
-        ('Helping Hand', 'Volunteering', 'Help Helping Hand Volunteers Group clean Tbilisi. Make it a better place!', 'Tbilisi, Dighomi Forest Park', 'December 10, 2023', '11:00 - 15:00', 'https://www.shutterstock.com/image-vector/happy-volunteers-cleaning-city-park-600nw-1936828339.jpg', 'helpinghand.png', 'https://youthvolunteering.ge/project/dasuftavebis-aktsia-1086'),
-        ;
-     ```
-
-4. Database for the map, **map.csv** is already installed in the static folder. 
+2. Database for the Discover page, **discover.csv**, is already installed in the static/databases folder.
+3. Database for the Map, **map.csv**, is already installed in the static/databases folder. 
 ## Usage
 
 ## 1. Run the Application
