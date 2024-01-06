@@ -254,13 +254,7 @@ def upload_profile_pic():
 @app.route("/discover")
 @login_required
 def discover():
-    """Display news on discover page"""
-
-    # # Get news form discover
-    # news = db.execute(
-    #     "SELECT * FROM discover"
-    # )
-
+    """Open discover page"""
     return render_template("discover.html")
 
 
