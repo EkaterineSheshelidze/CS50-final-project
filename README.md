@@ -12,27 +12,27 @@ I sincerely thank **Tene Recycling Company**, **Helping Hand**, and **Caritas Ge
 ## Features
 
 1. **User Authentication:**
-- Secure user authentication using Flask sessions. Users can sign up, log in, and enjoy a personalized experience.
+     - Secure user authentication using Flask sessions. Users can sign up, log in, and enjoy a personalized experience.
 
 2. **Profile Management:**
-- **Change Profile Information:**
-     - Update your password and personalize your profile picture via Profile Settings on the Home page or Navigation bar.
-
-- **Track your achievements:**
-     - Monitor your total accumulated hours and earned points on your Home Page. Stay motivated by keeping track of your achievements over time.
-
-- **Home Page Progress Section:**
-    - View all your achievements on your Home page.
-    - Add progress to the Progress seciton on the Home Page via "Add Progess" button. Provide details such as organization name, type of work, date, and hours spent.
+     - **Change Profile Information:**
+          - Update your password and personalize your profile picture via Profile Settings on the Home page or Navigation bar.
+     
+     - **Track your achievements:**
+          - Monitor your total accumulated hours and earned points on your Home Page. Stay motivated by keeping track of your achievements over time.
+     
+     - **Home Page Progress Section:**
+         - View all your achievements on your Home page.
+         - Add progress to the Progress seciton on the Home Page via "Add Progess" button. Provide details such as organization name, type of work, date, and hours spent.
 
 3. **Responsive Design:**
-- Enjoy a seamless experience on any device with GiveRadar responsive design, ensuring the website looks great on both desktop and mobile.
+     - Enjoy a seamless experience on any device with GiveRadar responsive design, ensuring the website looks great on both desktop and mobile.
 
 4. **Interactive Map:**
-- Explore areas all over Georgia where you can donate clothing, shoes, recycling materials like plastic, paper and old batteries using GiveRadar interactive map feature.
+     - Explore areas all over Georgia where you can donate clothing, shoes, recycling materials like plastic, paper and old batteries using GiveRadar interactive map feature.
 
 5. **Discover Page:**
-- Stay informed with our Discover page, featuring ongoing programs and events organized by GiveRadar’s collaborators. Clicking on an event provides detailed information on a dedicated page.
+     - Stay informed with our Discover page, featuring ongoing programs and events organized by GiveRadar’s collaborators. Clicking on an event provides detailed information on a dedicated page.
 
 ## Installation
 
