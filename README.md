@@ -6,7 +6,7 @@
 
 I identified a gap in the market: there were no websites that offered certified resources, helped organizers and volunteers like myself, and simultaneously encouraged people to recycle and volunteer.
 
-I sincerely thank **"Tene Recycling Company", "Helping Hand", And "Caritas Georgia"** for their help in gathering data such as recycling locations, donation centers, events, programs, and their feedback on the website.
+I sincerely thank **Tene Recycling Company**, **Helping Hand**, and **Caritas Georgia** for their help in gathering data such as recycling locations, donation centers, events, programs, and their feedback on the website.
 
 
 ## Features
