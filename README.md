@@ -11,28 +11,20 @@ I sincerely thank **"Tene Recycling Company", "Helping Hand", And "Caritas Georg
 
 ## Features
 
-1. **User Authentication:**
-- Secure user authentication using Flask sessions. Users can sign up, log in, and enjoy a personalized experience.
+1. **Secure user authentication** using Flask sessions.
 
 2. **Profile Management:**
-- **Change Profile Information:**
-     - Update your password and personalize your profile picture via Profile Settings on the Home page or Navigation bar.
+- **Change Profile Information:** Update your password and personalize your profile picture via Profile Settings on the Home page or Navigation bar.
 
 - **Track your achievements:**
-     - Monitor your total accumulated hours and earned points on your Home Page. Stay motivated by keeping track of your achievements over time.
-
-- **Home Page Progress Section:**
-    - View all your achievements on your Home page.
+     - Monitor your achievements, total accumulated hours and earned points on your Home Page. Stay motivated by keeping track of your achievements over time.
     - Add progress to the Progress seciton on the Home Page via "Add Progess" button. Provide details such as organization name, type of work, date, and hours spent.
 
-3. **Responsive Design:**
-- Enjoy a seamless experience on any device with GiveRadar responsive design, ensuring the website looks great on both desktop and mobile.
+3. **Dynamic and Interactive UI:** Enjoy a seamless experience on any device with GiveRadar responsive design, ensuring the website looks great on both desktop and mobile.
 
-4. **Interactive Map:**
-- Explore areas all over Georgia where you can donate clothing, shoes, recycling materials like plastic, paper and old batteries using GiveRadar interactive map feature.
+4. **Interactive Map:** Explore areas all over Georgia where you can donate clothing, shoes, recycling materials like plastic, paper and old batteries using GiveRadar interactive map feature.
 
-5. **Discover Page:**
-- Stay informed with our Discover page, featuring ongoing programs and events organized by GiveRadar’s collaborators. Clicking on an event provides detailed information on a dedicated page.
+5. **Discover Page:** Stay informed with our Discover page, featuring ongoing programs and events organized by GiveRadar’s collaborators. Clicking on an event provides detailed information on a dedicated page.
 
 ## Installation
 
@@ -61,32 +53,16 @@ To get started with the project, follow these steps to install the required depe
 For GiveRadar website to work, users, progress and discover Tables need to be created. 
 
 1. **Create Database Tables in giveradar.db:**
-   - Open a SQLite prompt. Run ```sqlite3 giveradar.db```
-   - Run the following SQL commands to create the necessary tables:
-
-     ```sql
-     -- Users Table
-     CREATE TABLE IF NOT EXISTS users (
-        id INTEGER PRIMARY KEY AUTOINCREMENT,
-        username TEXT NOT NULL,
-        password TEXT NOT NULL,
-        points NUMERIC NOT NULL DEFAULT 0,
-        hours NUMERIC NOT NULL DEFAULT 0,
-        pic TEXT DEFAULT "default.png",
-     );
-
-     -- Progress Table
-     CREATE TABLE progress (
-        id INTEGER PRIMARY KEY AUTOINCREMENT,
-        orgName TEXT NOT NULL,
-        type TEXT NOT NULL,
-        date DATE NOT NULL,
-        hours NUMERIC NOT NULL,
-        points NUMERIC NOT NULL, person_id INT NOT,
-     );
-     ```
+   - Open a SQLite prompt and create the database:
+      ```sqlite3 giveradar.db```
+   - Import the schema:
+      ```.read schema.sql```
+   - Exit SQLite:
+      ```.exit```
+   
 2. Database for the Discover page, **discover.csv**, is already installed in the static/databases folder.
 3. Database for the Map, **map.csv**, is already installed in the static/databases folder. 
+
 ## Usage
 
 ## 1. Run the Application
